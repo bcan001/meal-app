@@ -19,3 +19,10 @@ export default class App extends PureComponent {
   }
 }
 
+// next steps:
+// 1. move to json.db store
+	// - need to write queries to fetch the right data from json.db for MealsToday, MealsThisWeek, and MealsThisMonth
+// 2. make it so data can be updated from components to json.db
+// 3. move to redux (use thunk, saga, or custom middleware)
+
+

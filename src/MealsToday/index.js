@@ -1,37 +1,45 @@
 import React, { Component } from "react";
 import Meals from '../Listings/meals';
+import { API } from '../Api/utils';
 
 export default class MealsToday extends Component {
 	// super(props);
 	state = {
-		meals: [
-      {
-        'id' : 1,
-        'title' : 'McDonalds For Lunch',
-        'time' : '12:00',
-        'day_of_the_week' : 'Monday',
-        'week_of_the_month' : 1,
-        'health_rating' : 2.0,
-        'foods' : [
-          {
-            'id' : 1,
-            'name' : 'bread',
-            'serving_count' : 3,
-            'total_calories' : 300
-          },
-          {
-            'id' : 2,
-            'name' : 'beef',
-            'serving_count' : 2,
-            'total_calories' : 800
-          }
-        ]
-      }
-    ]
+		meals: []
 	}
+
+  componentDidMount() {
+    this.fetchAPI();
+  }
+
+  // https://github.com/bcan001/full-scale-app-react/blob/5015ef6e3be13fe5178b9aa7e309b5644c7cf0a2/src/Screens/Home/index.js
+  fetchAPI = async () => {
+    try {
+      const mealsAPI = API({ uri: 'http://localhost:3004/meals' });
+
+      const data = await Promise.all([mealsAPI]);
+
+      console.log('sdfasdfasdfasdfasfasdf')
+      console.log(data[0])
+
+      this.setState({ meals: data[0] });
+
+      console.log('current state')
+      console.log(this.state)
+
+    } catch (error) {
+      // this.setState({ loading: false, error: 'Oops! something went wrong' });
+      console.log('something went wrong');
+    }
+  };
+
 
 	render() {
 		const { meals } = this.state;
+    console.log('stuffy')
+    console.log(meals)
+    console.log('stuffy2')
+
     return (
     	<div>
     		<Meals meals={meals} />
