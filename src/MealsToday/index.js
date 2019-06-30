@@ -16,29 +16,17 @@ export default class MealsToday extends Component {
   fetchAPI = async () => {
     try {
       const mealsAPI = API({ uri: 'http://localhost:3004/meals' });
-
       const data = await Promise.all([mealsAPI]);
-
-      console.log('sdfasdfasdfasdfasfasdf')
-      console.log(data[0])
-
       this.setState({ meals: data[0] });
-
-      console.log('current state')
-      console.log(this.state)
-
     } catch (error) {
-      // this.setState({ loading: false, error: 'Oops! something went wrong' });
-      console.log('something went wrong');
+      console.log('API REQUEST FAILED');
     }
   };
 
-
+  
 	render() {
 		const { meals } = this.state;
-    console.log('stuffy')
     console.log(meals)
-    console.log('stuffy2')
 
     return (
     	<div>

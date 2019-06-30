@@ -37,19 +37,19 @@ export default class MealsThisWeek extends Component {
         'foods' : [
           {
             'id' : 3,
-            'name' : 'bread',
+            'name' : 'breadypoo',
             'serving_count' : 6,
             'total_calories' : 600
           },
           {
             'id' : 4,
-            'name' : 'beef',
+            'name' : 'manbeef',
             'serving_count' : 4,
             'total_calories' : 1600
           },
           {
             'id' : 5,
-            'name' : 'Coca Cola',
+            'name' : 'Coca Polaka Bennypoo',
             'serving_count' : 1,
             'total_calories' : 300
           }
@@ -57,34 +57,34 @@ export default class MealsThisWeek extends Component {
       },
       {
         'id' : 3,
-        'title' : 'McDonalds For Dinner Again',
+        'title' : 'McDonalds For Bennypoo Again',
         'time' : '22:00',
-        'day_of_the_week' : 'Monday',
+        'day_of_the_week' : 'Monbenfunday',
         'week_of_the_month' : 1,
         'health_rating' : 1.0,
         'foods' : [
           {
             'id' : 6,
-            'name' : 'bread',
+            'name' : 'breadisbad',
             'serving_count' : 6,
             'total_calories' : 600
           },
           {
             'id' : 7,
-            'name' : 'beef',
+            'name' : 'manbeef',
             'serving_count' : 4,
             'total_calories' : 1600
           },
           {
             'id' : 8,
-            'name' : 'Coca Cola',
+            'name' : 'Coca Poca',
             'serving_count' : 1,
             'total_calories' : 300
           }
           ,
           {
             'id' : 9,
-            'name' : 'Fries',
+            'name' : 'benpoo',
             'serving_count' : 1,
             'total_calories' : 500
           }
