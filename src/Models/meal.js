@@ -72,7 +72,7 @@ export default class Meal extends Component {
             {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} /> : <div></div>}
           </div> : 
           <div>
-            <form onSubmit={(e) => this.props.saveMeal(e,this.state)}>
+            <form onSubmit={(!this.props.update ? (e) => this.props.saveMeal(e,this.state) : (e) => this.props.saveExistingMeal(e,this.state))}>
               <div style={{ display: 'flex'}}>
                 <span style={{ flex: 1 }}>
                   <input type="text" placeholder="title here" id="title" value={this.state.title} onChange={this.onUpdateText}/>
