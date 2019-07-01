@@ -41,16 +41,6 @@
       "total_calories": 0,
       "health_rating": 0,
       "foods": []
-    },
-    {
-      "id": 4,
-      "title": "Ben bought me food",
-      "day_of_the_week": "today",
-      "date": "",
-      "time": "",
-      "total_calories": 0,
-      "health_rating": "10000000",
-      "foods": []
     }
   ]
 }
