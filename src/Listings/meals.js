@@ -41,10 +41,9 @@ export default class Meals extends Component {
 
   saveMeal = async (e,meal) => {
     e.preventDefault();
-    console.log('meal has been saved')
-
-    console.log(e.target)
-    console.log(meal)
+    // console.log('meal has been saved')
+    // console.log(e.target)
+    // console.log(meal)
 
     let { meals } = this.state;
 
@@ -74,10 +73,13 @@ export default class Meals extends Component {
     // ));
     // console.log()
     // .filter(x => x.id !== meal.id)
-
+    // console.log('meals before')
+    // console.log(this.state.meals)
     this.setState({
       meals: [...meals.filter(x => x.id !== meal.id),createdMeal]
     })
+    // console.log('meals after')
+    // console.log(this.state.meals)
     
 
   };
