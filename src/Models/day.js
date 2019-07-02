@@ -22,19 +22,14 @@ export default class Day extends Component {
   }
 
   showMeals = () => {
-    if (this.state.mealsIsOpen === false) {
-      this.setState({
-        mealsIsOpen: true
-      })
-    } else {
-      this.setState({
-        mealsIsOpen: false
-      })
-    }
+    this.setState({
+      mealsIsOpen: !this.state.mealsIsOpen ? true : false
+    })
   }
 
   render() {
     const { meals,dayOfTheWeek } = this.props;
+
     return (
       <div>
       	<div style={{ display: 'flex'}}>
@@ -49,7 +44,10 @@ export default class Day extends Component {
           <div style={{ marginLeft: '50px' }}>
             <Meals meals={meals} />
           </div>
-          : <span></span>
+          : 
+          <div style={{ marginLeft: '50px' }} hidden="true">
+            <Meals meals={meals} />
+          </div>
         }
       </div>
     )

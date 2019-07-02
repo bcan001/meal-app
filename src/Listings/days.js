@@ -11,11 +11,17 @@ export default class Days extends Component {
   filterMealsByDayOfTheWeek(dayOfTheWeek) {
     let { meals } = this.props;
     let filteredMeals = meals.filter(x => x.day_of_the_week === dayOfTheWeek)
+
+    console.log('meals this week');
+    console.log(meals);
+    console.log(filteredMeals);
+
     return filteredMeals
   }
 
   render() {
   	const { meals } = this.props;
+
     return (
     	<div>
     		<DayHeader />
