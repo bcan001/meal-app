@@ -41,6 +41,9 @@ export default class Meals extends Component {
 
   saveMeal = async (e,meal) => {
     e.preventDefault();
+
+    // console.log(meal)
+    // if meal.update === true, then it existed
     // console.log('meal has been saved')
     // console.log(e.target)
     // console.log(meal)
@@ -86,15 +89,26 @@ export default class Meals extends Component {
 
   // this is for saved existing meals(edit save)
   saveExistingMeal = async (e,meal) => {
+    e.preventDefault();
+    
+    console.log('meal saved')
+
+
+
+
 
   }
 
-  removeMeal = mealId => {
-    // e.preventDefault();
-    // console.log('meal has been removed')
-    // console.log(mealId)
-    
+
+  // great js examples of API calls
+  // https://github.com/coder4affine/benjamin_zeolearn/blob/786bb6f45e5454f705125e027e2428c24c1c88df/my-app/src/Todo/index.js
+  removeMeal = async mealId => {
+    // e.preventDefault();    
     const { meals } = this.state;
+    await fetch(`http://localhost:3004/meals/${mealId}`, {
+      method: 'DELETE',
+    });
+
     this.setState({
       meals: meals.filter(x => x.id !== mealId),
     });
@@ -107,7 +121,7 @@ export default class Meals extends Component {
     		<MealHeader />
 	      {meals.map(meal => (
 	  				<div key={meal.id} >
-              <Meal meal={meal} update={meal.update ? true : false} saveMeal={this.saveMeal} removeMeal={this.removeMeal} />
+              <Meal meal={meal} update={meal.update ? true : false} saveMeal={this.saveMeal} saveExistingMeal={this.saveExistingMeal} removeMeal={this.removeMeal} />
 	  				</div>
 	  			)
 	  		)}

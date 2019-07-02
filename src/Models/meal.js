@@ -46,10 +46,16 @@ export default class Meal extends Component {
     this.setState({ [event.target.id]: event.target.value });
   };
 
-
+  // problems:
+  // 1. remove meal for meal that is not saved needs to be a different function
+  // 2. save meal for meal that already has been saved needs to be a different function
+  // 3. conclusion: 2 'form' components need to exist 
+    // - meal that already existed in the db
+    // - meal that has been added on the fly
+    // MOVE RENDER FUNCTION TERINARY INTO AN IF STATEMENT
 
   render() {
-    const { removeMeal } = this.props;
+    const { removeMeal,saveMeal,saveExistingMeal } = this.props;
     return (
       <div>
         { !this.state.update ? 
@@ -66,13 +72,13 @@ export default class Meal extends Component {
                 <button onClick={() => this.setState({ update: true })}>Edit Meal</button>
               </span>
               <span style={{ flex: 1 }}>
-                <button onClick={() => this.props.removeMeal(this.state.id)}>Remove Meal</button>
+                <button onClick={() => removeMeal(this.state.id)}>Remove Meal</button>
               </span>
             </div>
             {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} /> : <div></div>}
           </div> : 
           <div>
-            <form onSubmit={(e) => this.props.saveMeal(e,this.state)}>
+            <form onSubmit={(e) => saveMeal(e,this.state)}>
               <div style={{ display: 'flex'}}>
                 <span style={{ flex: 1 }}>
                   <input type="text" placeholder="title here" id="title" value={this.state.title} onChange={this.onUpdateText}/>
@@ -99,7 +105,7 @@ export default class Meal extends Component {
                   <button type="submit">Save Meal</button>
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button onClick={() => this.props.removeMeal(this.state.id)}>Remove Meal</button>
+                  <button onClick={() => removeMeal(this.state.id)}>Remove Meal</button>
                 </span>
               </div>
             </form>

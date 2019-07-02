@@ -31,35 +31,6 @@
       "total_calories": 0,
       "health_rating": 0,
       "foods": []
-    },
-    {
-      "id": 3,
-      "title": "Late Night Snack",
-      "day_of_the_week": "",
-      "date": "",
-      "time": "",
-      "total_calories": 0,
-      "health_rating": 0,
-      "foods": []
-    },
-    {
-      "id": 4,
-      "title": "Ben bought me food",
-      "day_of_the_week": "today",
-      "date": "",
-      "time": "",
-      "total_calories": 0,
-      "health_rating": "10000000",
-      "foods": []
-    },
-    {
-      "id": 5,
-      "title": "yoyoma",
-      "date": "",
-      "time": "",
-      "total_calories": 0,
-      "health_rating": 0,
-      "foods": []
     }
   ]
 }
