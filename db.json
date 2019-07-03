@@ -24,7 +24,7 @@
     },
     {
       "id": 2,
-      "title": "Lunch2",
+      "title": "Lunch23",
       "day_of_the_week": "Monday",
       "date": "12/1/19",
       "time": "1:00",
@@ -42,7 +42,7 @@
     },
     {
       "id": 4,
-      "title": "early breakfast",
+      "title": "early breakfast bbb",
       "day_of_the_week": "Wednesday",
       "date": "12/3/19",
       "time": "9:00",
