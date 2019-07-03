@@ -2,11 +2,11 @@
   "meals": [
     {
       "id": 1,
-      "title": "McDonalds",
-      "time": "12:00",
+      "title": "McDonalds4",
       "day_of_the_week": "Monday",
-      "week_of_the_month": 1,
-      "health_rating": 2,
+      "date": "12/1/19",
+      "time": "12:06",
+      "health_rating": 1,
       "foods": [
         {
           "id": 1,
@@ -24,12 +24,29 @@
     },
     {
       "id": 2,
-      "title": "Lunch",
-      "day_of_the_week": "t0day",
-      "date": "",
+      "title": "Lunch2",
+      "day_of_the_week": "Monday",
+      "date": "12/1/19",
       "time": "1:00",
-      "total_calories": 0,
-      "health_rating": 0,
+      "health_rating": 3,
+      "foods": []
+    },
+    {
+      "id": 3,
+      "title": "Late Night Snackzzz",
+      "day_of_the_week": "Tuesday",
+      "date": "12/2/19",
+      "time": "20:00",
+      "health_rating": 3,
+      "foods": []
+    },
+    {
+      "id": 4,
+      "title": "early breakfast",
+      "day_of_the_week": "Wednesday",
+      "date": "12/3/19",
+      "time": "9:00",
+      "health_rating": 3,
       "foods": []
     }
   ]

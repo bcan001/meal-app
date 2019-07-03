@@ -19,6 +19,7 @@ export default class Foods extends Component {
             <Food food={food} />
           </div>
         ))}
+        <button>add food</button>
       </div>
     );
   }

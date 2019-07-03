@@ -1,4 +1,4 @@
-export const data = 1;
+// export const data = 1;
 
 export const API = ({ uri, method = 'GET', header = {}, body = null }) => {
   let options = {
