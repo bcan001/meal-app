@@ -176,6 +176,3 @@ export default class Meal extends Component {
 
 
 
-
-
-

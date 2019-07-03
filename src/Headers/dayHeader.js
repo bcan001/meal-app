@@ -6,7 +6,7 @@ function DayHeader() {
       <span style={{ flex: 1, fontWeight: 'bold' }}>Day</span>
       <span style={{ flex: 1, fontWeight: 'bold' }}>Date</span>
       <span style={{ flex: 1, fontWeight: 'bold' }}>Total Calories</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>Total Health Rating</span>
+      <span style={{ flex: 1, fontWeight: 'bold' }}>Average Health Rating</span>
       <span style={{ flex: 1, fontWeight: 'bold' }}>View Meals</span>
     </div>
   );

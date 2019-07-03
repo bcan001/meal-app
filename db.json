@@ -2,11 +2,11 @@
   "meals": [
     {
       "id": 1,
-      "title": "McDonalds2",
+      "title": "McDonalds4",
       "day_of_the_week": "Monday",
       "date": "12/1/19",
-      "time": "12:00",
-      "health_rating": 2,
+      "time": "12:06",
+      "health_rating": 1,
       "foods": [
         {
           "id": 1,
@@ -24,7 +24,7 @@
     },
     {
       "id": 2,
-      "title": "Lunch",
+      "title": "Lunch2",
       "day_of_the_week": "Monday",
       "date": "12/1/19",
       "time": "1:00",
@@ -33,7 +33,7 @@
     },
     {
       "id": 3,
-      "title": "Late Night Snack3",
+      "title": "Late Night Snackzzz",
       "day_of_the_week": "Tuesday",
       "date": "12/2/19",
       "time": "20:00",
@@ -46,7 +46,7 @@
       "day_of_the_week": "Wednesday",
       "date": "12/3/19",
       "time": "9:00",
-      "health_rating": "3",
+      "health_rating": 3,
       "foods": []
     }
   ]

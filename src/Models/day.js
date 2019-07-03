@@ -7,19 +7,19 @@ export default class Day extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalCalories: 0,
-      averageHealthRating: 0.00,
       mealsIsOpen: false
     };
   }
 
-  componentDidMount() {
-    let { meals } = this.props;
-    this.setState({
-      totalCalories: calculator.calculateTotalDayCalories(meals),
-      averageHealthRating: calculator.calculateAverageDayHealthRating(meals)
-    })
-  }
+  // totalDayCalories: 0,
+  // averageDayHealthRating: 0.00,
+  // componentWillReceiveProps(nextProps) {
+  //   let {meals} = nextProps.meals
+  //   this.setState({
+  //     totalDayCalories: calculator.calculateTotalDayCalories(nextProps.meals),
+  //     averageDayHealthRating: calculator.calculateAverageDayHealthRating(nextProps.meals),
+  //   })
+  // }
 
   showMeals = () => {
     this.setState({
@@ -29,14 +29,15 @@ export default class Day extends Component {
 
   render() {
     const { meals,dayOfTheWeek } = this.props;
-
+    console.log('day state')
+    console.log(this.state)
     return (
       <div>
       	<div style={{ display: 'flex'}}>
           <span style={{ flex: 1 }}>{dayOfTheWeek}</span>
           <span style={{ flex: 1 }}>&nbsp;</span>
-          <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
-          <span style={{ flex: 1 }}>{this.state.averageHealthRating}</span>
+          <span style={{ flex: 1 }}>{calculator.calculateTotalDayCalories(meals)}</span>
+          <span style={{ flex: 1 }}>{calculator.calculateAverageDayHealthRating(meals)}</span>
           <span style={{ flex: 1 }}><button onClick={() => this.showMeals()}>show meals</button></span>
         </div>
         {
@@ -45,7 +46,7 @@ export default class Day extends Component {
             <Meals meals={meals} />
           </div>
           : 
-          <div style={{ marginLeft: '50px' }} hidden="true">
+          <div style={{ marginLeft: '50px' }} hidden={true}>
             <Meals meals={meals} />
           </div>
         }

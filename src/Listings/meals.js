@@ -58,7 +58,7 @@ export default class Meals extends Component {
       date: meal.date,
       time: meal.time,
       total_calories: meal.total_calories,
-      health_rating: meal.health_rating,
+      health_rating: parseInt(meal.health_rating),
       foods: meal.foods
     }
 
@@ -94,7 +94,7 @@ export default class Meals extends Component {
       date: date,
       time: time,
       total_calories: total_calories,
-      health_rating: health_rating,
+      health_rating: parseInt(health_rating),
       foods: foods
     }
 
@@ -143,27 +143,19 @@ export default class Meals extends Component {
   render() {
     const { meals } = this.state;
     return (
-    	<div>
-    		<MealHeader />
-	      {meals.map(meal => (
-	  				<div key={meal.id} >
+      <div>
+        <MealHeader />
+        {meals.map(meal => (
+            <div key={meal.id} >
               <Meal meal={meal} newlyAddedMeal={meal.newlyAddedMeal ? true : false} isUpdating={meal.isUpdating ? true : false} saveMeal={this.saveMeal} saveExistingMeal={this.saveExistingMeal} removeMeal={this.removeMeal} removeExistingMeal={this.removeExistingMeal} />
-	  				</div>
-	  			)
-	  		)}
+            </div>
+          )
+        )}
         <button onClick={() => this.addMeal()}>add meal</button>
-	  	</div>
+      </div>
     );
   }
 }
-
-
-
-
-
-
-
-
 
 
 
