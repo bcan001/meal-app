@@ -8,7 +8,8 @@ export default class Meals extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      meals: []
+      meals: [],
+      addMealButtonIsHidden: false
     };
   }
 
