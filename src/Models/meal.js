@@ -70,7 +70,7 @@ export default class Meal extends Component {
                 <button onClick={() => this.props.removeExistingMeal(this.state.id)}>Remove Existing Meal</button>
               </span>
             </div>
-            {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} /> : <div></div>}
+            {this.state.foodsAreOpen ? <Foods mealId={this.state.id} foodList={this.state.foods} /> : <div></div>}
           </div>
           : <span></span>
         }
@@ -127,7 +127,7 @@ export default class Meal extends Component {
                 <button onClick={() => this.props.removeMeal(this.state.id)}>Remove Meal</button>
               </span>
             </div>
-            {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} /> : <div></div>}
+            {this.state.foodsAreOpen ? <Foods mealId={this.state.id} foodList={this.state.foods} /> : <div></div>}
           </div>
           : <span></span>
         }

@@ -8,8 +8,7 @@ export default class Meals extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      meals: [],
-      addMealButtonIsHidden: false
+      meals: []
     };
   }
 
@@ -40,7 +39,6 @@ export default class Meals extends Component {
       meals: [...meals,newMeal]
     })
 
-    console.log(this.state.meals)
   }
 
   saveMeal = async (e,meal) => {
