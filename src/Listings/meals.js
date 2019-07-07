@@ -50,6 +50,7 @@ export default class Meals extends Component {
 
     let { meals } = this.state;
 
+    // NEED TO UPDATE FOODS HERE SEPARATELY USE MEAL_ID
     let newMeal = {
       id: meal.id,
       title: meal.title,
@@ -86,6 +87,7 @@ export default class Meals extends Component {
     let { meals } = this.state;
     let { id,title,day_of_the_week,date,time,total_calories,health_rating,foods } = meal;
 
+    // NEED TO UPDATE FOODS HERE SEPARATELY USE MEAL_ID
     let updatedMeal = {
       id: id,
       title: title,
@@ -130,6 +132,8 @@ export default class Meals extends Component {
   removeExistingMeal = async mealId => {
     // e.preventDefault();    
     const { meals } = this.state;
+
+    // NEED TO UPDATE FOODS HERE SEPARATELY USE MEAL_ID
     await fetch(`http://localhost:3004/meals/${mealId}`, {
       method: 'DELETE',
     });

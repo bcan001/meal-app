@@ -11,8 +11,11 @@ export default class Weeks extends Component {
 
   filterMealsByWeekOfTheMonth(weekOfTheMonth) {
     let { meals } = this.props;
-    let filteredMeals = meals.filter(x => x.week_of_the_month === weekOfTheMonth)
-    return filteredMeals
+    // let filteredMeals = meals.filter(x => x.week_of_the_month === weekOfTheMonth)
+    // return filteredMeals
+
+    // need to add fix later, show all meals everywhere for now
+    return meals
   }
 
   render() {
