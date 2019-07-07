@@ -1,0 +1,36 @@
+/*inputs*/
+input {
+	width: 100%;
+}
+
+/*buttons*/
+.btn {
+	font-size: 10px;
+	font-weight: bold;
+}
+
+/*table headers*/
+.column-header {
+	font-weight: bold;
+}
+
+/*padding*/
+.row {
+	padding-bottom: 10px;
+}
+
+/*cards*/
+.card {
+	padding: 1em;
+}
+
+.card {
+	padding: 1em;
+	margin-bottom: 10px;
+}
+
+
+
+
+
+

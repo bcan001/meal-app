@@ -2,13 +2,13 @@ import React from 'react';
 
 function WeekHeader() {
   return (
-  	<div style={{ display: 'flex'}}>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>week number</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>start week date</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>end week date</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>Total Calories</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>Average Health Rating</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>show days</span>
+  	<div className='row'>
+      <span className='col-sm column-header'>week number</span>
+      <span className='col-sm column-header'>start week date</span>
+      <span className='col-sm column-header'>end week date</span>
+      <span className='col-sm column-header'>Total Calories</span>
+      <span className='col-sm column-header'>Average Health Rating</span>
+      <span className='col-sm column-header'>show days</span>
     </div>
   );
 }

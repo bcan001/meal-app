@@ -23,11 +23,8 @@ export default class MealsThisWeek extends Component {
     }
   };
 
-
 	render() {
 		const { meals } = this.state;
-
-    
     return (
     	<div>
     		<Days meals={meals} />

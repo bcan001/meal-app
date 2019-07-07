@@ -23,7 +23,7 @@ export default class Days extends Component {
   	const { meals } = this.props;
 
     return (
-    	<div>
+    	<div className='card bg-warning'>
     		<DayHeader />
     		<Day meals={this.filterMealsByDayOfTheWeek('Monday')} dayOfTheWeek={'Monday'} />
     		<Day meals={this.filterMealsByDayOfTheWeek('Tuesday')} dayOfTheWeek={'Tuesday'} />

@@ -35,18 +35,18 @@ export default class Week extends Component {
   render() {
     const { meals,weekOfTheMonth } = this.props;
     return (
-    	<div>
-	    	<div style={{ display: 'flex'}}>
-		      <span style={{ flex: 1 }}>{weekOfTheMonth}</span>
-		      <span style={{ flex: 1 }}>date</span>
-		      <span style={{ flex: 1 }}>date</span>
-		      <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
-		      <span style={{ flex: 1 }}>{this.state.averageHealthRating}</span>
-		      <span style={{ flex: 1 }}><button onClick={() => this.showDays()}>show days</button></span>
+    	<div className='card'>
+	    	<div className='row'>
+		      <span className='col-sm'>{weekOfTheMonth}</span>
+		      <span className='col-sm'>date</span>
+		      <span className='col-sm'>date</span>
+		      <span className='col-sm'>{this.state.totalCalories}</span>
+		      <span className='col-sm'>{this.state.averageHealthRating}</span>
+		      <span className='col-sm'><button className="btn btn-info" onClick={() => this.showDays()}>show days</button></span>
 	    	</div>
 	    	{
 	        this.state.daysIsOpen ? 
-	        <div style={{ marginLeft: '50px' }}>
+	        <div>
 	          <Days meals={meals} />
 	        </div>
 	        : <span></span>

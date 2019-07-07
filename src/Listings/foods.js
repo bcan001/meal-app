@@ -19,19 +19,22 @@ export default class Foods extends Component {
     });
   }
 
-
   render() {
     const { foodList } = this.state;
     const { addFood,saveFood,saveExistingFood,removeFood,removeExistingFood } = this.props;
     return (
-      <div style={{ marginLeft: '50px' }}>
+      <div className='card bg-warning'>
         <FoodHeader />
         {foodList.map(food => (
           <div key={food.id}>
             <Food food={food} saveFood={saveFood} saveExistingFood={saveExistingFood} removeFood={removeFood} removeExistingFood={removeExistingFood} />
           </div>
         ))}
-        <button onClick={() => addFood()}>add food</button>
+        <div className='row'>
+          <div className='col-sm'>
+            <button className="btn btn-secondary" onClick={() => addFood()}>add food</button>
+          </div>
+        </div>
       </div>
     );
   }
