@@ -10,7 +10,7 @@
       "foods": [
         {
           "id": 1,
-          "name": "Fries!",
+          "name": "Fries",
           "serving_count": 3,
           "total_calories": 3007
         },
@@ -31,6 +31,12 @@
           "name": "taco2",
           "serving_count": 2,
           "total_calories": 444
+        },
+        {
+          "id": 5,
+          "name": "cheeeeeese",
+          "serving_count": 55,
+          "total_calories": 1
         }
       ]
     },
@@ -64,7 +70,7 @@
           "id": 4,
           "name": "ketchup",
           "serving_count": 1,
-          "total_calories": 100
+          "total_calories": 9999
         }
       ]
     },
@@ -84,6 +90,34 @@
         },
         {
           "id": 2,
+          "name": "salad",
+          "serving_count": 2,
+          "total_calories": 100
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Rumi",
+      "day_of_the_week": "Saturday",
+      "date": "12/5/19",
+      "time": "2:00",
+      "health_rating": 4,
+      "foods": [
+        {
+          "id": 1,
+          "name": "pita",
+          "serving_count": 1,
+          "total_calories": 200
+        },
+        {
+          "id": 2,
+          "name": "beef",
+          "serving_count": 3,
+          "total_calories": 400
+        },
+        {
+          "id": 3,
           "name": "salad",
           "serving_count": 2,
           "total_calories": 100

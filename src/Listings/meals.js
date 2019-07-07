@@ -123,7 +123,7 @@ export default class Meals extends Component {
   render() {
     const { meals } = this.state;
     return (
-      <div>
+      <div className='card bg-light'>
         <MealHeader />
         {meals.map(meal => (
             <div key={meal.id} >
@@ -131,7 +131,11 @@ export default class Meals extends Component {
             </div>
           )
         )}
-        <button className="btn btn-primary" onClick={() => this.addMeal()}>add meal</button>
+        <div className='row'>
+          <div className='col-sm'>
+            <button className="btn btn-primary" onClick={() => this.addMeal()}>add meal</button>
+          </div>
+        </div>
       </div>
     );
   }

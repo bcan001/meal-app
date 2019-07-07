@@ -22,9 +22,14 @@ export default class App extends PureComponent {
 // https://github.com/coder4affine/benjamin_zeolearn/blob/786bb6f45e5454f705125e027e2428c24c1c88df/my-app/src/Todo/index.js
 
 // next steps:
-// 1. integrate bootstrap: container => row => col-sm
+// 1. integrate bootstrap: container => row => col-sm.  X
 // 2. total calories of meals needs to update with changes in food calories
-// 3. change meals this month to 'meals past 30 days'. change meals this week to 'meals past 7 days'
+// 3. build archive screen with the following. needs to switch to archive, just like everything else:
+  // change meals this month to 'meals past 30 days'. change meals this week to 'meals past 7 days'
+// 4. api for date management: HOW WILL I MANAGE EVERY SINGLE DAY STATE ?
+
+
+
 
 
 

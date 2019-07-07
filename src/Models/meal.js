@@ -25,13 +25,14 @@ export default class Meal extends Component {
       foodsAreOpen: nextProps.meal.foodsAreOpen,
       newlyAddedMeal: nextProps.meal.newlyAddedMeal,
       isUpdating: nextProps.meal.isUpdating
+      // totalCalories: calculator.calculateTotalMealCalories(nextProps.meal)
     })
   }
 
   componentDidMount() {
-    this.setState({
-      totalCalories: calculator.calculateTotalMealCalories(this.props.meal)
-    })
+    // this.setState({
+    //   totalCalories: calculator.calculateTotalMealCalories(this.props.meal)
+    // })
   }
 
   showFoods = () => {
@@ -178,23 +179,24 @@ export default class Meal extends Component {
 
   render() {
     const { saveMeal,saveExistingMeal,removeMeal,removeExistingMeal } = this.props;
+
     return (
-      <div>
+      <div className='card'>
         { !this.state.newlyAddedMeal && !this.state.isUpdating ?
           <div>
-            <div style={{ display: 'flex'}}>
-              <span style={{ flex: 1 }}>{this.state.title}</span>
-              <span style={{ flex: 1 }}>{this.state.day_of_the_week}</span>
-              <span style={{ flex: 1 }}>{this.state.date}</span>
-              <span style={{ flex: 1 }}>{this.state.time}</span>
-              <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
-              <span style={{ flex: 1 }}>{this.state.health_rating}</span>
-              <span style={{ flex: 1 }}><button className="btn btn-primary" onClick={() => this.showFoods()}>show foods</button></span>
-              <span style={{ flex: 1 }}>
-                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}>Edit Existing Meal</button>
+            <div className='row'>
+              <span className='col-sm'>{this.state.title}</span>
+              <span className='col-sm'>{this.state.day_of_the_week}</span>
+              <span className='col-sm'>{this.state.date}</span>
+              <span className='col-sm'>{this.state.time}</span>
+              <span className='col-sm'>{calculator.calculateTotalMealCalories(this.state.foods)}</span>
+              <span className='col-sm'>{this.state.health_rating}</span>
+              <span className='col-sm'><button className="btn btn-primary" onClick={() => this.showFoods()}>show foods</button></span>
+              <span className='col-sm'>
+                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}>edit</button>
               </span>
-              <span style={{ flex: 1 }}>
-                <button className="btn btn-primary" onClick={() => this.props.removeExistingMeal(this.state.id)}>Remove Existing Meal</button>
+              <span className='col-sm'>
+                <button className="btn btn-primary" onClick={() => this.props.removeExistingMeal(this.state.id)}>remove</button>
               </span>
             </div>
             {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} addFood={this.addFood} saveFood={this.saveFood} saveExistingFood={this.saveExistingFood} removeFood={this.removeFood} removeExistingFood={this.removeExistingFood} /> : <div></div>}
@@ -204,33 +206,33 @@ export default class Meal extends Component {
         { !this.state.newlyAddedMeal && this.state.isUpdating ?
           <div>
             <form onSubmit={(e) => saveExistingMeal(e,this.state)} >
-              <div style={{ display: 'flex'}}>
-                <span style={{ flex: 1 }}>
+              <div className='row'>
+                <span className='col-sm'>
                   <input type="text" placeholder="title here" id="title" value={this.state.title} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   <input type="text" placeholder="day here" id="day_of_the_week" value={this.state.day_of_the_week} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   <input type="text" placeholder="date here" id="date" value={this.state.date} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   <input type="text" placeholder="time here" id="time" value={this.state.time} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   &nbsp;
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   <input type="text" placeholder="health_rating here" id="health_rating" value={this.state.health_rating} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   &nbsp;
                 </span>
-                <span style={{ flex: 1 }}>
-                  <button className="btn btn-primary" type="submit">Save Existing Meal</button>
+                <span className='col-sm'>
+                  <button className="btn btn-primary" type="submit">save meal</button>
                 </span>
-                <span style={{ flex: 1 }}>
-                  <button className="btn btn-primary" onClick={() => removeExistingMeal(this.state.id)}>Remove Existing Meal</button>
+                <span className='col-sm'>
+                  <button className="btn btn-primary" onClick={() => removeExistingMeal(this.state.id)}>remove</button>
                 </span>
               </div>
             </form>
@@ -239,19 +241,20 @@ export default class Meal extends Component {
         }
         { this.state.newlyAddedMeal && !this.state.isUpdating ?
           <div>
-            <div style={{ display: 'flex'}}>
-              <span style={{ flex: 1 }}>{this.state.title}</span>
-              <span style={{ flex: 1 }}>{this.state.day_of_the_week}</span>
-              <span style={{ flex: 1 }}>{this.state.date}</span>
-              <span style={{ flex: 1 }}>{this.state.time}</span>
-              <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
-              <span style={{ flex: 1 }}>{this.state.health_rating}</span>
-              <span style={{ flex: 1 }}><button className="btn btn-primary" onClick={() => this.showFoods()}>show foods</button></span>
-              <span style={{ flex: 1 }}>
-                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}>Edit Meal</button>
+            fluffy bunnies go bang
+            <div className='row'>
+              <span className='col-sm'>{this.state.title}</span>
+              <span className='col-sm'>{this.state.day_of_the_week}</span>
+              <span className='col-sm'>{this.state.date}</span>
+              <span className='col-sm'>{this.state.time}</span>
+              <span className='col-sm'>{calculator.calculateTotalMealCalories(this.state.foods)}</span>
+              <span className='col-sm'>{this.state.health_rating}</span>
+              <span className='col-sm'><button className="btn btn-primary" onClick={() => this.showFoods()}>show foods</button></span>
+              <span className='col-sm'>
+                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}>edit</button>
               </span>
-              <span style={{ flex: 1 }}>
-                <button className="btn btn-primary" onClick={() => this.props.removeMeal(this.state.id)}>Remove Meal</button>
+              <span className='col-sm'>
+                <button className="btn btn-primary" onClick={() => this.props.removeMeal(this.state.id)}>remove</button>
               </span>
             </div>
             {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} addFood={this.addFood} saveFood={this.saveFood} saveExistingFood={this.saveExistingFood} removeFood={this.removeFood} removeExistingFood={this.removeExistingFood} /> : <div></div>}
@@ -261,33 +264,33 @@ export default class Meal extends Component {
         { this.state.newlyAddedMeal && this.state.isUpdating ?
           <div>
             <form onSubmit={(e) => saveMeal(e,this.state)} >
-              <div style={{ display: 'flex'}}>
-                <span style={{ flex: 1 }}>
+              <div className='row'>
+                <span className='col-sm'>
                   <input type="text" placeholder="title here" id="title" value={this.state.title} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   <input type="text" placeholder="day here" id="day_of_the_week" value={this.state.day_of_the_week} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   <input type="text" placeholder="date here" id="date" value={this.state.date} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   <input type="text" placeholder="time here" id="time" value={this.state.time} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   &nbsp;
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   <input type="text" placeholder="health_rating here" id="health_rating" value={this.state.health_rating} onChange={this.onUpdateText}/>
                 </span>
-                <span style={{ flex: 1 }}>
+                <span className='col-sm'>
                   &nbsp;
                 </span>
-                <span style={{ flex: 1 }}>
-                  <button className="btn btn-primary" type="submit">Save Meal</button>
+                <span className='col-sm'>
+                  <button className="btn btn-primary" type="submit">save meal</button>
                 </span>
-                <span style={{ flex: 1 }}>
-                  <button className="btn btn-primary" onClick={() => removeMeal(this.state.id)}>Remove Meal</button>
+                <span className='col-sm'>
+                  <button className="btn btn-primary" onClick={() => removeMeal(this.state.id)}>remove</button>
                 </span>
               </div>
             </form>

@@ -33,20 +33,20 @@ export default class Day extends Component {
     console.log(this.state)
     return (
       <div>
-      	<div style={{ display: 'flex'}}>
-          <span style={{ flex: 1 }}>{dayOfTheWeek}</span>
-          <span style={{ flex: 1 }}>&nbsp;</span>
-          <span style={{ flex: 1 }}>total day calories</span>
-          <span style={{ flex: 1 }}>{calculator.calculateAverageDayHealthRating(meals)}</span>
-          <span style={{ flex: 1 }}><button className="btn btn-success" onClick={() => this.showMeals()}>show meals</button></span>
+      	<div className='row'>
+          <span className='col-sm'>{dayOfTheWeek}</span>
+          <span className='col-sm'>&nbsp;</span>
+          <span className='col-sm'>total day calories</span>
+          <span className='col-sm'>{calculator.calculateAverageDayHealthRating(meals)}</span>
+          <span className='col-sm'><button className="btn btn-success" onClick={() => this.showMeals()}>show meals</button></span>
         </div>
         {
           this.state.mealsIsOpen ? 
-          <div style={{ marginLeft: '50px' }}>
+          <div>
             <Meals meals={meals} />
           </div>
           : 
-          <div style={{ marginLeft: '50px' }} hidden={true}>
+          <div hidden={true}>
             <Meals meals={meals} />
           </div>
         }

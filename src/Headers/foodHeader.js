@@ -2,12 +2,12 @@ import React from 'react';
 
 function FoodHeader() {
   return (
-  	<div style={{ display: 'flex'}}>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>Name</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>Serving Count</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>Total Calories</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>Edit Food</span>
-      <span style={{ flex: 1, fontWeight: 'bold' }}>Remove Food</span>
+  	<div className='row'>
+      <span className='col-sm column-header'>Name</span>
+      <span className='col-sm column-header'>Serving Count</span>
+      <span className='col-sm column-header'>Total Calories</span>
+      <span className='col-sm column-header'>Edit Food</span>
+      <span className='col-sm column-header'>Remove Food</span>
     </div>
   );
 }

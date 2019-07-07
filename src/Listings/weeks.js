@@ -21,7 +21,7 @@ export default class Weeks extends Component {
   render() {
     // const { meals } = this.props;
     return (
-    	<div>
+    	<div className='card bg-light'>
     		<WeekHeader />
     		<Week meals={this.filterMealsByWeekOfTheMonth(1)} weekOfTheMonth={1} />
     		<Week meals={this.filterMealsByWeekOfTheMonth(2)} weekOfTheMonth={2} />

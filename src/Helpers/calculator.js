@@ -16,9 +16,9 @@ export function calculateAverageDayHealthRating(meals) {
   return totalHealthRating / totalMealsCount
 }
 
-export function calculateTotalMealCalories(meal) {
+export function calculateTotalMealCalories(foods) {
 	let totalCalorieCount = 0;
-	meal.foods.map(food => (
+	foods.map(food => (
     totalCalorieCount += food.total_calories
   ))
   return totalCalorieCount
