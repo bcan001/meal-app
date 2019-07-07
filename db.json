@@ -2,11 +2,12 @@
   "meals": [
     {
       "id": 1,
-      "title": "McDonalds4",
+      "title": "McDonalds",
       "day_of_the_week": "Monday",
       "date": "12/1/19",
       "time": "12:06",
-      "health_rating": 1,
+      "total_calories": 0,
+      "health_rating": 3,
       "foods": [
         {
           "id": 1,
@@ -16,20 +17,52 @@
         },
         {
           "id": 2,
-          "name": "Man Sandwich ;)",
+          "name": "Man Sandwich ;)22",
           "serving_count": 2,
-          "total_calories": 800
+          "total_calories": 111
+        },
+        {
+          "id": 3,
+          "name": "salad",
+          "serving_count": 4,
+          "total_calories": 994
+        },
+        {
+          "id": 4,
+          "name": "ice cream",
+          "serving_count": 1,
+          "total_calories": 235
         }
       ]
     },
     {
       "id": 2,
-      "title": "Lunch23",
+      "title": "burger king",
       "day_of_the_week": "Monday",
       "date": "12/1/19",
       "time": "1:00",
-      "health_rating": 3,
-      "foods": []
+      "total_calories": 0,
+      "health_rating": 5,
+      "foods": [
+        {
+          "id": 1,
+          "name": "burger patty",
+          "serving_count": 2,
+          "total_calories": 300
+        },
+        {
+          "id": 2,
+          "name": "bun",
+          "serving_count": 2,
+          "total_calories": 200
+        },
+        {
+          "id": 3,
+          "name": "fries",
+          "serving_count": 2,
+          "total_calories": 300
+        }
+      ]
     },
     {
       "id": 3,
@@ -47,6 +80,15 @@
       "date": "12/3/19",
       "time": "9:00",
       "health_rating": 3,
+      "foods": []
+    },
+    {
+      "id": 5,
+      "title": "JAM",
+      "day_of_the_week": "Saturday",
+      "date": "12/4/19",
+      "time": "12:00",
+      "health_rating": 4,
       "foods": []
     }
   ]

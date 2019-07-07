@@ -36,7 +36,7 @@ export default class Day extends Component {
       	<div style={{ display: 'flex'}}>
           <span style={{ flex: 1 }}>{dayOfTheWeek}</span>
           <span style={{ flex: 1 }}>&nbsp;</span>
-          <span style={{ flex: 1 }}>{calculator.calculateTotalDayCalories(meals)}</span>
+          <span style={{ flex: 1 }}>total day calories</span>
           <span style={{ flex: 1 }}>{calculator.calculateAverageDayHealthRating(meals)}</span>
           <span style={{ flex: 1 }}><button onClick={() => this.showMeals()}>show meals</button></span>
         </div>
