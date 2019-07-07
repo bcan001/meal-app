@@ -6,7 +6,7 @@ export default class Meal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      foodsAreOpen: false,
+      foodsAreOpen: props.meal.foodsAreOpen,
       totalCalories: 0,
       foods: props.meal.foods,
       id: props.meal.id,
@@ -15,15 +15,16 @@ export default class Meal extends Component {
       date: props.meal.date,
       time: props.meal.time,
       health_rating: props.meal.health_rating,
-      newlyAddedMeal: this.props.newlyAddedMeal,
-      isUpdating: this.props.isUpdating
+      newlyAddedMeal: props.meal.newlyAddedMeal,
+      isUpdating: props.meal.isUpdating
     };
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      newlyAddedMeal: nextProps.newlyAddedMeal,
-      isUpdating: nextProps.isUpdating
+      foodsAreOpen: nextProps.meal.foodsAreOpen,
+      newlyAddedMeal: nextProps.meal.newlyAddedMeal,
+      isUpdating: nextProps.meal.isUpdating
     })
   }
 
@@ -42,17 +43,12 @@ export default class Meal extends Component {
   }
 
   onUpdateText = event => {
-    console.log('updating text')
-    console.log(event.target)
     this.setState({ [event.target.id]: event.target.value });
   };
 
-
   // moving methods from foods to be able to edit foods too:
   addFood = async () => {
-    console.log('add new food form')
     let { foods } = this.state;
-    // console.log(foods)
     
     let newFood = {
       id: foods.length + 1,
@@ -71,8 +67,6 @@ export default class Meal extends Component {
   saveFood = async (e,food) => {
     e.preventDefault();
 
-    console.log(food)
-
     let { foods } = this.state;
     let newFood = {
       id: food.id,
@@ -85,14 +79,12 @@ export default class Meal extends Component {
     const updatedFoods = [...foods.slice(0, i), {...newFood}, ...foods.slice(i + 1)];
     this.setState({ foods: updatedFoods });
 
-
     let existingMeal = {
       id: this.state.id,
       title: this.state.title,
       day_of_the_week: this.state.day_of_the_week,
       date: this.state.date,
       time: this.state.time,
-      total_calories: 0,
       health_rating: this.state.health_rating,
       foods: [...foods.slice(0, i), {...newFood}, ...foods.slice(i + 1)]
     }
@@ -105,13 +97,9 @@ export default class Meal extends Component {
       },
     });
     const newMeal = await res.json();
-
-
-
   }
 
   saveExistingFood = async (e,food) => {
-    console.log('existing food saved')
     e.preventDefault();
 
     let { foods } = this.state;
@@ -134,7 +122,6 @@ export default class Meal extends Component {
       day_of_the_week: this.state.day_of_the_week,
       date: this.state.date,
       time: this.state.time,
-      total_calories: 0,
       health_rating: this.state.health_rating,
       foods: [...foods.slice(0, i), {...newFood}, ...foods.slice(i + 1)]
     }
@@ -147,7 +134,6 @@ export default class Meal extends Component {
       },
     });
     const newMeal = await res.json();
-
   }
 
   removeFood = async foodId => {
@@ -159,8 +145,6 @@ export default class Meal extends Component {
   };
 
   removeExistingFood = async foodId => {
-    console.log('existing food removed')
-
     const { foods } = this.state;
     let updatedFoods = foods.filter(x => x.id !== foodId);
 
@@ -188,7 +172,6 @@ export default class Meal extends Component {
       },
     });
     const newMeal = await res.json();
-  
   };
   // ---------------------------------------------
 
@@ -206,12 +189,12 @@ export default class Meal extends Component {
               <span style={{ flex: 1 }}>{this.state.time}</span>
               <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
               <span style={{ flex: 1 }}>{this.state.health_rating}</span>
-              <span style={{ flex: 1 }}><button onClick={() => this.showFoods()}>show foods</button></span>
+              <span style={{ flex: 1 }}><button className="btn btn-primary" onClick={() => this.showFoods()}>show foods</button></span>
               <span style={{ flex: 1 }}>
-                <button onClick={() => this.setState({ isUpdating: true })}>Edit Existing Meal</button>
+                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}>Edit Existing Meal</button>
               </span>
               <span style={{ flex: 1 }}>
-                <button onClick={() => this.props.removeExistingMeal(this.state.id)}>Remove Existing Meal</button>
+                <button className="btn btn-primary" onClick={() => this.props.removeExistingMeal(this.state.id)}>Remove Existing Meal</button>
               </span>
             </div>
             {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} addFood={this.addFood} saveFood={this.saveFood} saveExistingFood={this.saveExistingFood} removeFood={this.removeFood} removeExistingFood={this.removeExistingFood} /> : <div></div>}
@@ -244,10 +227,10 @@ export default class Meal extends Component {
                   &nbsp;
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button type="submit">Save Existing Meal</button>
+                  <button className="btn btn-primary" type="submit">Save Existing Meal</button>
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button onClick={() => removeExistingMeal(this.state.id)}>Remove Existing Meal</button>
+                  <button className="btn btn-primary" onClick={() => removeExistingMeal(this.state.id)}>Remove Existing Meal</button>
                 </span>
               </div>
             </form>
@@ -263,12 +246,12 @@ export default class Meal extends Component {
               <span style={{ flex: 1 }}>{this.state.time}</span>
               <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
               <span style={{ flex: 1 }}>{this.state.health_rating}</span>
-              <span style={{ flex: 1 }}><button onClick={() => this.showFoods()}>show foods</button></span>
+              <span style={{ flex: 1 }}><button className="btn btn-primary" onClick={() => this.showFoods()}>show foods</button></span>
               <span style={{ flex: 1 }}>
-                <button onClick={() => this.setState({ isUpdating: true })}>Edit Meal</button>
+                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}>Edit Meal</button>
               </span>
               <span style={{ flex: 1 }}>
-                <button onClick={() => this.props.removeMeal(this.state.id)}>Remove Meal</button>
+                <button className="btn btn-primary" onClick={() => this.props.removeMeal(this.state.id)}>Remove Meal</button>
               </span>
             </div>
             {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} addFood={this.addFood} saveFood={this.saveFood} saveExistingFood={this.saveExistingFood} removeFood={this.removeFood} removeExistingFood={this.removeExistingFood} /> : <div></div>}
@@ -301,10 +284,10 @@ export default class Meal extends Component {
                   &nbsp;
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button type="submit">Save Meal</button>
+                  <button className="btn btn-primary" type="submit">Save Meal</button>
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button onClick={() => removeMeal(this.state.id)}>Remove Meal</button>
+                  <button className="btn btn-primary" onClick={() => removeMeal(this.state.id)}>Remove Meal</button>
                 </span>
               </div>
             </form>

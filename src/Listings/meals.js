@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import MealHeader from '../Headers/mealHeader';
 import Meal from '../Models/meal';
-// import NewMeal from '../Forms/newMeal';
-
 
 export default class Meals extends Component {
   constructor(props) {
@@ -19,7 +17,6 @@ export default class Meals extends Component {
   }
 
   addMeal = async () => {
-    console.log('add new meal form')
     let { meals } = this.state;
     // Title,Day,Date,Time,Total Calories,Health Rating,Foods
     let newMeal = {
@@ -28,26 +25,20 @@ export default class Meals extends Component {
       day_of_the_week: '',
       date: '',
       time: '',
-      total_calories: 0,
       health_rating: 0,
       foods: [],
       newlyAddedMeal: true,
-      isUpdating: true
+      isUpdating: true,
+      foodsAreOpen: true
     }
 
     this.setState({
       meals: [...meals,newMeal]
     })
-
   }
 
   saveMeal = async (e,meal) => {
     e.preventDefault();
-    console.log('meal has been saved')
-
-    console.log(e.target)
-    console.log(meal)
-
     let { meals } = this.state;
 
     // NEED TO UPDATE FOODS HERE SEPARATELY USE MEAL_ID
@@ -57,7 +48,6 @@ export default class Meals extends Component {
       day_of_the_week: meal.day_of_the_week,
       date: meal.date,
       time: meal.time,
-      total_calories: meal.total_calories,
       health_rating: parseInt(meal.health_rating),
       foods: meal.foods
     }
@@ -75,17 +65,14 @@ export default class Meals extends Component {
     this.setState({
       meals: [...meals.filter(x => x.id !== meal.id),createdMeal]
     })
-    
-
   };
 
   // this is for saved existing meals(edit save)
   saveExistingMeal = async (e,meal) => {
     e.preventDefault();
-    console.log('meal saved')
 
     let { meals } = this.state;
-    let { id,title,day_of_the_week,date,time,total_calories,health_rating,foods } = meal;
+    let { id,title,day_of_the_week,date,time,health_rating,foods } = meal;
 
     // NEED TO UPDATE FOODS HERE SEPARATELY USE MEAL_ID
     let updatedMeal = {
@@ -94,7 +81,6 @@ export default class Meals extends Component {
       day_of_the_week: day_of_the_week,
       date: date,
       time: time,
-      total_calories: total_calories,
       health_rating: parseInt(health_rating),
       foods: foods
     }
@@ -115,24 +101,15 @@ export default class Meals extends Component {
     this.setState({ meals: updatedMeals });
   }
 
-  // great js examples of API calls
-  // https://github.com/coder4affine/benjamin_zeolearn/blob/786bb6f45e5454f705125e027e2428c24c1c88df/my-app/src/Todo/index.js
-  removeMeal = async mealId => {
-    // e.preventDefault();    
+  removeMeal = async mealId => { 
     const { meals } = this.state;
-    // await fetch(`http://localhost:3004/meals/${mealId}`, {
-    //   method: 'DELETE',
-    // });
-
     this.setState({
       meals: meals.filter(x => x.id !== mealId),
     });
   };
 
-  removeExistingMeal = async mealId => {
-    // e.preventDefault();    
+  removeExistingMeal = async mealId => { 
     const { meals } = this.state;
-
     // NEED TO UPDATE FOODS HERE SEPARATELY USE MEAL_ID
     await fetch(`http://localhost:3004/meals/${mealId}`, {
       method: 'DELETE',
@@ -154,7 +131,7 @@ export default class Meals extends Component {
             </div>
           )
         )}
-        <button onClick={() => this.addMeal()}>add meal</button>
+        <button className="btn btn-primary" onClick={() => this.addMeal()}>add meal</button>
       </div>
     );
   }

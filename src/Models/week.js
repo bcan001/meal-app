@@ -42,7 +42,7 @@ export default class Week extends Component {
 		      <span style={{ flex: 1 }}>date</span>
 		      <span style={{ flex: 1 }}>{this.state.totalCalories}</span>
 		      <span style={{ flex: 1 }}>{this.state.averageHealthRating}</span>
-		      <span style={{ flex: 1 }}><button onClick={() => this.showDays()}>show days</button></span>
+		      <span style={{ flex: 1 }}><button className="btn btn-info" onClick={() => this.showDays()}>show days</button></span>
 	    	</div>
 	    	{
 	        this.state.daysIsOpen ? 

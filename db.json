@@ -2,18 +2,17 @@
   "meals": [
     {
       "id": 1,
-      "title": "McDonalds",
+      "title": "McDonalds2",
       "day_of_the_week": "Monday",
       "date": "12/1/19",
       "time": "12:06",
-      "total_calories": 0,
-      "health_rating": 3,
+      "health_rating": 4,
       "foods": [
         {
           "id": 1,
           "name": "Fries!",
           "serving_count": 3,
-          "total_calories": 300
+          "total_calories": 3007
         },
         {
           "id": 2,
@@ -29,19 +28,18 @@
         },
         {
           "id": 4,
-          "name": "ice cream",
-          "serving_count": 1,
-          "total_calories": 235
+          "name": "taco2",
+          "serving_count": 2,
+          "total_calories": 444
         }
       ]
     },
     {
       "id": 2,
-      "title": "burger king",
+      "title": "burger king!",
       "day_of_the_week": "Monday",
       "date": "12/1/19",
       "time": "1:00",
-      "total_calories": 0,
       "health_rating": 5,
       "foods": [
         {
@@ -61,35 +59,36 @@
           "name": "fries",
           "serving_count": 2,
           "total_calories": 300
+        },
+        {
+          "id": 4,
+          "name": "ketchup",
+          "serving_count": 1,
+          "total_calories": 100
         }
       ]
     },
     {
       "id": 3,
-      "title": "Late Night Snackzzz",
+      "title": "wendys",
       "day_of_the_week": "Tuesday",
-      "date": "12/2/19",
+      "date": "12/4/19",
       "time": "20:00",
       "health_rating": 3,
-      "foods": []
-    },
-    {
-      "id": 4,
-      "title": "early breakfast bbb",
-      "day_of_the_week": "Wednesday",
-      "date": "12/3/19",
-      "time": "9:00",
-      "health_rating": 3,
-      "foods": []
-    },
-    {
-      "id": 5,
-      "title": "JAM",
-      "day_of_the_week": "Saturday",
-      "date": "12/4/19",
-      "time": "12:00",
-      "health_rating": 4,
-      "foods": []
+      "foods": [
+        {
+          "id": 1,
+          "name": "burger",
+          "serving_count": 1,
+          "total_calories": 200
+        },
+        {
+          "id": 2,
+          "name": "salad",
+          "serving_count": 2,
+          "total_calories": 100
+        }
+      ]
     }
   ]
 }

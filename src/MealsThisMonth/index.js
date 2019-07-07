@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Weeks from '../Listings/weeks';
 import { API } from '../Api/utils';
 
-
 export default class MealsThisMonth extends Component {
 	// super(props);
 	state = {

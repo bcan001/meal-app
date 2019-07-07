@@ -38,7 +38,7 @@ export default class Day extends Component {
           <span style={{ flex: 1 }}>&nbsp;</span>
           <span style={{ flex: 1 }}>total day calories</span>
           <span style={{ flex: 1 }}>{calculator.calculateAverageDayHealthRating(meals)}</span>
-          <span style={{ flex: 1 }}><button onClick={() => this.showMeals()}>show meals</button></span>
+          <span style={{ flex: 1 }}><button className="btn btn-success" onClick={() => this.showMeals()}>show meals</button></span>
         </div>
         {
           this.state.mealsIsOpen ? 

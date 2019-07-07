@@ -19,7 +19,6 @@ export default class Foods extends Component {
     });
   }
 
-
   render() {
     const { foodList } = this.state;
     const { addFood,saveFood,saveExistingFood,removeFood,removeExistingFood } = this.props;
@@ -31,7 +30,7 @@ export default class Foods extends Component {
             <Food food={food} saveFood={saveFood} saveExistingFood={saveExistingFood} removeFood={removeFood} removeExistingFood={removeExistingFood} />
           </div>
         ))}
-        <button onClick={() => addFood()}>add food</button>
+        <button className="btn btn-secondary" onClick={() => addFood()}>add food</button>
       </div>
     );
   }

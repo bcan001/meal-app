@@ -21,15 +21,11 @@ export default class Food extends Component {
   }
 
   onUpdateText = event => {
-    console.log('updating text')
-    console.log(event.target)
     this.setState({ [event.target.id]: event.target.value });
   };
 
   render() {
     const { addFood,saveFood,saveExistingFood,removeFood,removeExistingFood } = this.props;
-    console.log('new food here')
-    console.log(this.state)
     return (
       <div>
         { !this.state.newlyAddedFood && !this.state.isUpdating ?
@@ -37,8 +33,8 @@ export default class Food extends Component {
             <span style={{ flex: 1 }}>{this.state.name}</span>
             <span style={{ flex: 1 }}>{this.state.serving_count}</span>
             <span style={{ flex: 1 }}>{this.state.total_calories}</span>
-            <span style={{ flex: 1 }}><button onClick={() => this.setState({ isUpdating: true })}>Edit Existing Food</button></span>
-            <span style={{ flex: 1 }}><button onClick={() => removeExistingFood(this.state.id)}>Remove Existing Food</button></span>
+            <span style={{ flex: 1 }}><button className="btn btn-secondary" onClick={() => this.setState({ isUpdating: true })}>Edit Existing Food</button></span>
+            <span style={{ flex: 1 }}><button className="btn btn-secondary" onClick={() => removeExistingFood(this.state.id)}>Remove Existing Food</button></span>
           </div> : <span></span> 
         }
         { !this.state.newlyAddedFood && this.state.isUpdating ?
@@ -55,10 +51,10 @@ export default class Food extends Component {
                   <input type="text" placeholder="total_calories here" id="total_calories" value={this.state.total_calories} onChange={this.onUpdateText}/>
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button type="submit">Save Existing Food</button>
+                  <button className="btn btn-secondary" type="submit">Save Existing Food</button>
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button onClick={() => removeExistingFood(this.state.id)}>Remove Existing Food</button>
+                  <button className="btn btn-secondary" onClick={() => removeExistingFood(this.state.id)}>Remove Existing Food</button>
                 </span>
               </div>
             </form>
@@ -84,10 +80,10 @@ export default class Food extends Component {
                   <input type="text" placeholder="total_calories here" id="total_calories" value={this.state.total_calories} onChange={this.onUpdateText}/>
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button type="submit">Save Food</button>
+                  <button className="btn btn-secondary" type="submit">Save Food</button>
                 </span>
                 <span style={{ flex: 1 }}>
-                  <button onClick={() => removeFood(this.state.id)}>Remove Food</button>
+                  <button className="btn btn-secondary" onClick={() => removeFood(this.state.id)}>Remove Food</button>
                 </span>
               </div>
             </form>
