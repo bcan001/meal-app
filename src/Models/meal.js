@@ -2,6 +2,15 @@ import React, { Component } from "react";
 import Foods from '../Listings/foods';
 import * as calculator from '../Helpers/calculator.js'; 
 
+// https://react-icons.netlify.com/#/
+import { FaFolder } from "react-icons/fa"; // view foods
+import { FaRegFolderOpen } from "react-icons/fa"; // view foods when open
+import { MdCreate } from "react-icons/md"; // edit meal
+import { IoMdClose } from "react-icons/io"; // destroy meal
+import { FaSave } from "react-icons/fa"; // save meal
+
+
+
 export default class Meal extends Component {
   constructor(props) {
     super(props);
@@ -186,17 +195,13 @@ export default class Meal extends Component {
           <div>
             <div className='row'>
               <span className='col-sm'>{this.state.title}</span>
-              <span className='col-sm'>{this.state.day_of_the_week}</span>
-              <span className='col-sm'>{this.state.date}</span>
               <span className='col-sm'>{this.state.time}</span>
               <span className='col-sm'>{calculator.calculateTotalMealCalories(this.state.foods)}</span>
               <span className='col-sm'>{this.state.health_rating}</span>
-              <span className='col-sm'><button className="btn btn-primary" onClick={() => this.showFoods()}>show foods</button></span>
               <span className='col-sm'>
-                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}>edit</button>
-              </span>
-              <span className='col-sm'>
-                <button className="btn btn-primary" onClick={() => this.props.removeExistingMeal(this.state.id)}>remove</button>
+                <button className="btn btn-primary" onClick={() => this.showFoods()}><FaFolder /></button>
+                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}><MdCreate /></button>
+                <button className="btn btn-primary" onClick={() => this.props.removeExistingMeal(this.state.id)}><IoMdClose /></button>
               </span>
             </div>
             {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} addFood={this.addFood} saveFood={this.saveFood} saveExistingFood={this.saveExistingFood} removeFood={this.removeFood} removeExistingFood={this.removeExistingFood} /> : <div></div>}
@@ -211,12 +216,6 @@ export default class Meal extends Component {
                   <input type="text" placeholder="title here" id="title" value={this.state.title} onChange={this.onUpdateText}/>
                 </span>
                 <span className='col-sm'>
-                  <input type="text" placeholder="day here" id="day_of_the_week" value={this.state.day_of_the_week} onChange={this.onUpdateText}/>
-                </span>
-                <span className='col-sm'>
-                  <input type="text" placeholder="date here" id="date" value={this.state.date} onChange={this.onUpdateText}/>
-                </span>
-                <span className='col-sm'>
                   <input type="text" placeholder="time here" id="time" value={this.state.time} onChange={this.onUpdateText}/>
                 </span>
                 <span className='col-sm'>
@@ -226,13 +225,8 @@ export default class Meal extends Component {
                   <input type="text" placeholder="health_rating here" id="health_rating" value={this.state.health_rating} onChange={this.onUpdateText}/>
                 </span>
                 <span className='col-sm'>
-                  &nbsp;
-                </span>
-                <span className='col-sm'>
-                  <button className="btn btn-primary" type="submit">save meal</button>
-                </span>
-                <span className='col-sm'>
-                  <button className="btn btn-primary" onClick={() => removeExistingMeal(this.state.id)}>remove</button>
+                  <button className="btn btn-primary" type="submit"><FaSave /></button>
+                  <button className="btn btn-primary" onClick={() => removeExistingMeal(this.state.id)}><IoMdClose /></button>
                 </span>
               </div>
             </form>
@@ -244,17 +238,13 @@ export default class Meal extends Component {
             fluffy bunnies go bang
             <div className='row'>
               <span className='col-sm'>{this.state.title}</span>
-              <span className='col-sm'>{this.state.day_of_the_week}</span>
-              <span className='col-sm'>{this.state.date}</span>
               <span className='col-sm'>{this.state.time}</span>
               <span className='col-sm'>{calculator.calculateTotalMealCalories(this.state.foods)}</span>
               <span className='col-sm'>{this.state.health_rating}</span>
-              <span className='col-sm'><button className="btn btn-primary" onClick={() => this.showFoods()}>show foods</button></span>
               <span className='col-sm'>
-                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}>edit</button>
-              </span>
-              <span className='col-sm'>
-                <button className="btn btn-primary" onClick={() => this.props.removeMeal(this.state.id)}>remove</button>
+                <button className="btn btn-primary" onClick={() => this.showFoods()}><FaFolder /></button>
+                <button className="btn btn-primary" onClick={() => this.setState({ isUpdating: true })}><MdCreate /></button>
+                <button className="btn btn-primary" onClick={() => this.props.removeMeal(this.state.id)}><IoMdClose /></button>
               </span>
             </div>
             {this.state.foodsAreOpen ? <Foods foodList={this.state.foods} addFood={this.addFood} saveFood={this.saveFood} saveExistingFood={this.saveExistingFood} removeFood={this.removeFood} removeExistingFood={this.removeExistingFood} /> : <div></div>}
@@ -269,12 +259,6 @@ export default class Meal extends Component {
                   <input type="text" placeholder="title here" id="title" value={this.state.title} onChange={this.onUpdateText}/>
                 </span>
                 <span className='col-sm'>
-                  <input type="text" placeholder="day here" id="day_of_the_week" value={this.state.day_of_the_week} onChange={this.onUpdateText}/>
-                </span>
-                <span className='col-sm'>
-                  <input type="text" placeholder="date here" id="date" value={this.state.date} onChange={this.onUpdateText}/>
-                </span>
-                <span className='col-sm'>
                   <input type="text" placeholder="time here" id="time" value={this.state.time} onChange={this.onUpdateText}/>
                 </span>
                 <span className='col-sm'>
@@ -284,13 +268,8 @@ export default class Meal extends Component {
                   <input type="text" placeholder="health_rating here" id="health_rating" value={this.state.health_rating} onChange={this.onUpdateText}/>
                 </span>
                 <span className='col-sm'>
-                  &nbsp;
-                </span>
-                <span className='col-sm'>
-                  <button className="btn btn-primary" type="submit">save meal</button>
-                </span>
-                <span className='col-sm'>
-                  <button className="btn btn-primary" onClick={() => removeMeal(this.state.id)}>remove</button>
+                  <button className="btn btn-primary" type="submit"><FaSave /></button>
+                  <button className="btn btn-primary" onClick={() => removeMeal(this.state.id)}><IoMdClose /></button>
                 </span>
               </div>
             </form>
