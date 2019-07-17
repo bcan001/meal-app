@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 
+// need edit,save,remove icons
+
+import { MdCreate } from "react-icons/md"; // edit meal
+import { IoMdClose } from "react-icons/io"; // destroy meal
+import { FaSave } from "react-icons/fa"; // save meal
+
 export default class Food extends Component {
   constructor(props) {
     super(props);
@@ -33,8 +39,10 @@ export default class Food extends Component {
             <span className='col-sm'>{this.state.name}</span>
             <span className='col-sm'>{this.state.serving_count}</span>
             <span className='col-sm'>{this.state.total_calories}</span>
-            <span className='col-sm'><button className="btn btn-secondary" onClick={() => this.setState({ isUpdating: true })}>edit</button></span>
-            <span className='col-sm'><button className="btn btn-secondary" onClick={() => removeExistingFood(this.state.id)}>remove</button></span>
+            <span className='col-sm'>
+              <button className="btn btn-secondary" onClick={() => this.setState({ isUpdating: true })}><MdCreate /></button>
+              <button className="btn btn-secondary" onClick={() => removeExistingFood(this.state.id)}><IoMdClose /></button>
+            </span>
           </div> : <span></span> 
         }
         { !this.state.newlyAddedFood && this.state.isUpdating ?
@@ -51,10 +59,7 @@ export default class Food extends Component {
                   <input type="text" placeholder="total_calories here" id="total_calories" value={this.state.total_calories} onChange={this.onUpdateText}/>
                 </span>
                 <span className='col-sm'>
-                  <button className="btn btn-secondary" type="submit">save</button>
-                </span>
-                <span className='col-sm'>
-                  <button className="btn btn-secondary" onClick={() => removeExistingFood(this.state.id)}>remove</button>
+                  <button className="btn btn-secondary" type="submit"><FaSave /></button>
                 </span>
               </div>
             </form>
@@ -80,10 +85,8 @@ export default class Food extends Component {
                   <input type="text" placeholder="total_calories here" id="total_calories" value={this.state.total_calories} onChange={this.onUpdateText}/>
                 </span>
                 <span className='col-sm'>
-                  <button className="btn btn-secondary" type="submit">save</button>
-                </span>
-                <span className='col-sm'>
-                  <button className="btn btn-secondary" onClick={() => removeFood(this.state.id)}>remove</button>
+                  <button className="btn btn-secondary" type="submit"><FaSave /></button>
+                  <button className="btn btn-secondary" onClick={() => removeFood(this.state.id)}><IoMdClose /></button>
                 </span>
               </div>
             </form>

@@ -10,7 +10,6 @@ import { IoMdClose } from "react-icons/io"; // destroy meal
 import { FaSave } from "react-icons/fa"; // save meal
 
 
-
 export default class Meal extends Component {
   constructor(props) {
     super(props);
@@ -226,7 +225,6 @@ export default class Meal extends Component {
                 </span>
                 <span className='col-sm'>
                   <button className="btn btn-primary" type="submit"><FaSave /></button>
-                  <button className="btn btn-primary" onClick={() => removeExistingMeal(this.state.id)}><IoMdClose /></button>
                 </span>
               </div>
             </form>

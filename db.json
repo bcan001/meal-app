@@ -25,18 +25,6 @@
           "name": "salad",
           "serving_count": 4,
           "total_calories": 994
-        },
-        {
-          "id": 4,
-          "name": "taco2",
-          "serving_count": 2,
-          "total_calories": 444
-        },
-        {
-          "id": 5,
-          "name": "cheeeeeese",
-          "serving_count": 55,
-          "total_calories": 1
         }
       ]
     },
@@ -121,6 +109,12 @@
           "name": "salad",
           "serving_count": 2,
           "total_calories": 100
+        },
+        {
+          "id": 4,
+          "name": "fries",
+          "serving_count": 1,
+          "total_calories": 44
         }
       ]
     }
