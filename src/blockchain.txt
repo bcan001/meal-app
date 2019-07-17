@@ -1,0 +1,12 @@
+create message to other nodes using this function:
+
+signature = func(private_key,message)
+
+other nodes use signature to verify the message came from you using this function:
+
+verify = func(signature,public_key,message)
+
+
+
+-------------
+nobody can tamper with this system because CHANGES IN THE MESSAGE WOULD INVALIDATE THE SIGNATURE

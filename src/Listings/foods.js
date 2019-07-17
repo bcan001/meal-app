@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import FoodHeader from '../Headers/foodHeader';
 import Food from '../Models/food';
 
+import { FaPlus } from "react-icons/fa"; // add meal
+
+
 
 export default class Foods extends Component {
   constructor(props) {
@@ -32,7 +35,7 @@ export default class Foods extends Component {
         ))}
         <div className='row'>
           <div className='col-sm'>
-            <button className="btn btn-secondary" onClick={() => addFood()}>add food</button>
+            <button className="btn btn-secondary" onClick={() => addFood()}><FaPlus /></button>
           </div>
         </div>
       </div>
